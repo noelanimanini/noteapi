@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create]
 
   def create
       @user = User.find_by(username: params[:username])
@@ -12,8 +12,8 @@ class AuthController < ApplicationController
       end 
   end 
 
-  # def show
-  #   render json: {id: @user.id, username: @user.username}
-  # end
+  def show
+    render json: {id: @user.id, username: @user.username}
+  end
 
 end 

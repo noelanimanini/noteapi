@@ -15,6 +15,7 @@ class NotesController < ApplicationController
 
   def update
     @note.update(note_params)
+    # byebug
     render json: @note, status: 200
   end
 
@@ -34,6 +35,7 @@ class NotesController < ApplicationController
   end
 
   def set_note
+    # byebug
     @note = Note.find(params[:id])
   end
 end
